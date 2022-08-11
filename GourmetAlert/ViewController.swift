@@ -6,14 +6,70 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import SwiftyJSON
+
+struct shopData {
+    var shopName = [String]()
+    var shopAddress = [String]()
+    var shopLogoImage = [String]()
+    var shopURL = [String]()
+}
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+    
+    var articles = shopData()
+    var image = UIImage()
+    
+    let baseURL = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/"
+    let countParameter = "&count=30"
+    let format = "&format=json"
+    
+    func getArticleData(url: String) {
+        
+        refreshData()
+        
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    }
+    
+    func refreshData() {
+        self.articles.shopName.removeAll()
+        self.articles.shopAddress.removeAll()
+        self.articles.shopLogoImage.removeAll()
+        self.articles.shopURL.removeAll()
+        
     }
 
 
 }
 
+extension ViewController: UITableViewDelegate,UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        <#code#>
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
+    
+    
+}
+
+
+
+extension ViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let changeSearchBar = searchBar.text?.replacingOccurrences(of: " ", with: ",") else { return }
+        guard let changeSearchBar = searchBar.text?.replacingOccurrences(of: "　", with: ",") else { return }
+        guard let encodeKeyBoard = changeSearchBar.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
+        
+    }
+}

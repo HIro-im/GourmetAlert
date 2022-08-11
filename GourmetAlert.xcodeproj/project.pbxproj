@@ -16,6 +16,9 @@
 		5AFFBAEC28A5A2370025C9A9 /* GourmetAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAEB28A5A2370025C9A9 /* GourmetAlertTests.swift */; };
 		5AFFBAF628A5A2370025C9A9 /* GourmetAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAF528A5A2370025C9A9 /* GourmetAlertUITests.swift */; };
 		5AFFBAF828A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAF728A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift */; };
+		9189F776C833827787A9ADB8 /* Pods_GourmetAlert_GourmetAlertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1768CA28030507151D595857 /* Pods_GourmetAlert_GourmetAlertUITests.framework */; };
+		A2BAB68BA038DC7BC8C57046 /* Pods_GourmetAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4698D3551D7123F42E16AB /* Pods_GourmetAlert.framework */; };
+		DC049D597F33A3857E080A57 /* Pods_GourmetAlertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFACC2A8F38E3D9455B4D37 /* Pods_GourmetAlertTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		12AF63CA4BDEEEA0F633EBA3 /* Pods-GourmetAlert.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlert.release.xcconfig"; path = "Target Support Files/Pods-GourmetAlert/Pods-GourmetAlert.release.xcconfig"; sourceTree = "<group>"; };
+		1768CA28030507151D595857 /* Pods_GourmetAlert_GourmetAlertUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAlert_GourmetAlertUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E4698D3551D7123F42E16AB /* Pods_GourmetAlert.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAlert.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3172EA7A40665604006190B3 /* Pods-GourmetAlertTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlertTests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAlertTests/Pods-GourmetAlertTests.release.xcconfig"; sourceTree = "<group>"; };
+		44B8AE64382B543AD9F45D58 /* Pods-GourmetAlert-GourmetAlertUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlert-GourmetAlertUITests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		5AFFBAD128A5A2330025C9A9 /* GourmetAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFFBAD428A5A2330025C9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5AFFBAD628A5A2330025C9A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +57,10 @@
 		5AFFBAF128A5A2370025C9A9 /* GourmetAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AFFBAF528A5A2370025C9A9 /* GourmetAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAlertUITests.swift; sourceTree = "<group>"; };
 		5AFFBAF728A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A94913FD7495C28F5A40B88F /* Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig"; sourceTree = "<group>"; };
+		ABFACC2A8F38E3D9455B4D37 /* Pods_GourmetAlertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAlertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B49CFAF30B10EDF4C447D870 /* Pods-GourmetAlertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlertTests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAlertTests/Pods-GourmetAlertTests.debug.xcconfig"; sourceTree = "<group>"; };
+		E001AE71572B922BED7E1A22 /* Pods-GourmetAlert.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlert.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAlert/Pods-GourmetAlert.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A2BAB68BA038DC7BC8C57046 /* Pods_GourmetAlert.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC049D597F33A3857E080A57 /* Pods_GourmetAlertTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9189F776C833827787A9ADB8 /* Pods_GourmetAlert_GourmetAlertUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00A6C2985AEF416F6D775EA4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2E4698D3551D7123F42E16AB /* Pods_GourmetAlert.framework */,
+				1768CA28030507151D595857 /* Pods_GourmetAlert_GourmetAlertUITests.framework */,
+				ABFACC2A8F38E3D9455B4D37 /* Pods_GourmetAlertTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		5AFFBAC828A5A2330025C9A9 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				5AFFBAEA28A5A2370025C9A9 /* GourmetAlertTests */,
 				5AFFBAF428A5A2370025C9A9 /* GourmetAlertUITests */,
 				5AFFBAD228A5A2330025C9A9 /* Products */,
+				6298455100F3D629EB9CDCA7 /* Pods */,
+				00A6C2985AEF416F6D775EA4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -127,6 +154,20 @@
 			path = GourmetAlertUITests;
 			sourceTree = "<group>";
 		};
+		6298455100F3D629EB9CDCA7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E001AE71572B922BED7E1A22 /* Pods-GourmetAlert.debug.xcconfig */,
+				12AF63CA4BDEEEA0F633EBA3 /* Pods-GourmetAlert.release.xcconfig */,
+				44B8AE64382B543AD9F45D58 /* Pods-GourmetAlert-GourmetAlertUITests.debug.xcconfig */,
+				A94913FD7495C28F5A40B88F /* Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig */,
+				B49CFAF30B10EDF4C447D870 /* Pods-GourmetAlertTests.debug.xcconfig */,
+				3172EA7A40665604006190B3 /* Pods-GourmetAlertTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFFBAFB28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlert" */;
 			buildPhases = (
+				8F9AF02A58B7C564B41ADFD6 /* [CP] Check Pods Manifest.lock */,
 				5AFFBACD28A5A2330025C9A9 /* Sources */,
 				5AFFBACE28A5A2330025C9A9 /* Frameworks */,
 				5AFFBACF28A5A2330025C9A9 /* Resources */,
+				F92A364BF725BAA0F24E6E23 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -151,6 +194,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFFBAFE28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertTests" */;
 			buildPhases = (
+				05929234CDE608E64FD93730 /* [CP] Check Pods Manifest.lock */,
 				5AFFBAE328A5A2370025C9A9 /* Sources */,
 				5AFFBAE428A5A2370025C9A9 /* Frameworks */,
 				5AFFBAE528A5A2370025C9A9 /* Resources */,
@@ -169,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5AFFBB0128A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertUITests" */;
 			buildPhases = (
+				5D513403E848BFB81D1F330E /* [CP] Check Pods Manifest.lock */,
 				5AFFBAED28A5A2370025C9A9 /* Sources */,
 				5AFFBAEE28A5A2370025C9A9 /* Frameworks */,
 				5AFFBAEF28A5A2370025C9A9 /* Resources */,
+				23B83E656E5445A615A8D230 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -252,6 +298,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05929234CDE608E64FD93730 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetAlertTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		23B83E656E5445A615A8D230 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5D513403E848BFB81D1F330E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetAlert-GourmetAlertUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8F9AF02A58B7C564B41ADFD6 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-GourmetAlert-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F92A364BF725BAA0F24E6E23 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert/Pods-GourmetAlert-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert/Pods-GourmetAlert-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-GourmetAlert/Pods-GourmetAlert-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5AFFBACD28A5A2330025C9A9 /* Sources */ = {
@@ -432,6 +581,7 @@
 		};
 		5AFFBAFC28A5A2370025C9A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E001AE71572B922BED7E1A22 /* Pods-GourmetAlert.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -459,6 +609,7 @@
 		};
 		5AFFBAFD28A5A2370025C9A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12AF63CA4BDEEEA0F633EBA3 /* Pods-GourmetAlert.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -486,6 +637,7 @@
 		};
 		5AFFBAFF28A5A2370025C9A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B49CFAF30B10EDF4C447D870 /* Pods-GourmetAlertTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -505,6 +657,7 @@
 		};
 		5AFFBB0028A5A2370025C9A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3172EA7A40665604006190B3 /* Pods-GourmetAlertTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -524,6 +677,7 @@
 		};
 		5AFFBB0228A5A2370025C9A9 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44B8AE64382B543AD9F45D58 /* Pods-GourmetAlert-GourmetAlertUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -541,6 +695,7 @@
 		};
 		5AFFBB0328A5A2370025C9A9 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A94913FD7495C28F5A40B88F /* Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
