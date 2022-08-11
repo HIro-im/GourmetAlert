@@ -1,0 +1,601 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5AFFBAD528A5A2330025C9A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAD428A5A2330025C9A9 /* AppDelegate.swift */; };
+		5AFFBAD728A5A2330025C9A9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAD628A5A2330025C9A9 /* SceneDelegate.swift */; };
+		5AFFBAD928A5A2330025C9A9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAD828A5A2330025C9A9 /* ViewController.swift */; };
+		5AFFBADC28A5A2330025C9A9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFBADA28A5A2330025C9A9 /* Main.storyboard */; };
+		5AFFBADE28A5A2370025C9A9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFBADD28A5A2370025C9A9 /* Assets.xcassets */; };
+		5AFFBAE128A5A2370025C9A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5AFFBADF28A5A2370025C9A9 /* LaunchScreen.storyboard */; };
+		5AFFBAEC28A5A2370025C9A9 /* GourmetAlertTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAEB28A5A2370025C9A9 /* GourmetAlertTests.swift */; };
+		5AFFBAF628A5A2370025C9A9 /* GourmetAlertUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAF528A5A2370025C9A9 /* GourmetAlertUITests.swift */; };
+		5AFFBAF828A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBAF728A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5AFFBAE828A5A2370025C9A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AFFBAC928A5A2330025C9A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AFFBAD028A5A2330025C9A9;
+			remoteInfo = GourmetAlert;
+		};
+		5AFFBAF228A5A2370025C9A9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 5AFFBAC928A5A2330025C9A9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5AFFBAD028A5A2330025C9A9;
+			remoteInfo = GourmetAlert;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		5AFFBAD128A5A2330025C9A9 /* GourmetAlert.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GourmetAlert.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFFBAD428A5A2330025C9A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5AFFBAD628A5A2330025C9A9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5AFFBAD828A5A2330025C9A9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5AFFBADB28A5A2330025C9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5AFFBADD28A5A2370025C9A9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5AFFBAE028A5A2370025C9A9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5AFFBAE228A5A2370025C9A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5AFFBAE728A5A2370025C9A9 /* GourmetAlertTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAlertTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFFBAEB28A5A2370025C9A9 /* GourmetAlertTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAlertTests.swift; sourceTree = "<group>"; };
+		5AFFBAF128A5A2370025C9A9 /* GourmetAlertUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GourmetAlertUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5AFFBAF528A5A2370025C9A9 /* GourmetAlertUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAlertUITests.swift; sourceTree = "<group>"; };
+		5AFFBAF728A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GourmetAlertUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		5AFFBACE28A5A2330025C9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAE428A5A2370025C9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAEE28A5A2370025C9A9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		5AFFBAC828A5A2330025C9A9 = {
+			isa = PBXGroup;
+			children = (
+				5AFFBAD328A5A2330025C9A9 /* GourmetAlert */,
+				5AFFBAEA28A5A2370025C9A9 /* GourmetAlertTests */,
+				5AFFBAF428A5A2370025C9A9 /* GourmetAlertUITests */,
+				5AFFBAD228A5A2330025C9A9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		5AFFBAD228A5A2330025C9A9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5AFFBAD128A5A2330025C9A9 /* GourmetAlert.app */,
+				5AFFBAE728A5A2370025C9A9 /* GourmetAlertTests.xctest */,
+				5AFFBAF128A5A2370025C9A9 /* GourmetAlertUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5AFFBAD328A5A2330025C9A9 /* GourmetAlert */ = {
+			isa = PBXGroup;
+			children = (
+				5AFFBAD428A5A2330025C9A9 /* AppDelegate.swift */,
+				5AFFBAD628A5A2330025C9A9 /* SceneDelegate.swift */,
+				5AFFBAD828A5A2330025C9A9 /* ViewController.swift */,
+				5AFFBADA28A5A2330025C9A9 /* Main.storyboard */,
+				5AFFBADD28A5A2370025C9A9 /* Assets.xcassets */,
+				5AFFBADF28A5A2370025C9A9 /* LaunchScreen.storyboard */,
+				5AFFBAE228A5A2370025C9A9 /* Info.plist */,
+			);
+			path = GourmetAlert;
+			sourceTree = "<group>";
+		};
+		5AFFBAEA28A5A2370025C9A9 /* GourmetAlertTests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFFBAEB28A5A2370025C9A9 /* GourmetAlertTests.swift */,
+			);
+			path = GourmetAlertTests;
+			sourceTree = "<group>";
+		};
+		5AFFBAF428A5A2370025C9A9 /* GourmetAlertUITests */ = {
+			isa = PBXGroup;
+			children = (
+				5AFFBAF528A5A2370025C9A9 /* GourmetAlertUITests.swift */,
+				5AFFBAF728A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift */,
+			);
+			path = GourmetAlertUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		5AFFBAD028A5A2330025C9A9 /* GourmetAlert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFFBAFB28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlert" */;
+			buildPhases = (
+				5AFFBACD28A5A2330025C9A9 /* Sources */,
+				5AFFBACE28A5A2330025C9A9 /* Frameworks */,
+				5AFFBACF28A5A2330025C9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = GourmetAlert;
+			productName = GourmetAlert;
+			productReference = 5AFFBAD128A5A2330025C9A9 /* GourmetAlert.app */;
+			productType = "com.apple.product-type.application";
+		};
+		5AFFBAE628A5A2370025C9A9 /* GourmetAlertTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFFBAFE28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertTests" */;
+			buildPhases = (
+				5AFFBAE328A5A2370025C9A9 /* Sources */,
+				5AFFBAE428A5A2370025C9A9 /* Frameworks */,
+				5AFFBAE528A5A2370025C9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFFBAE928A5A2370025C9A9 /* PBXTargetDependency */,
+			);
+			name = GourmetAlertTests;
+			productName = GourmetAlertTests;
+			productReference = 5AFFBAE728A5A2370025C9A9 /* GourmetAlertTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		5AFFBAF028A5A2370025C9A9 /* GourmetAlertUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5AFFBB0128A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertUITests" */;
+			buildPhases = (
+				5AFFBAED28A5A2370025C9A9 /* Sources */,
+				5AFFBAEE28A5A2370025C9A9 /* Frameworks */,
+				5AFFBAEF28A5A2370025C9A9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5AFFBAF328A5A2370025C9A9 /* PBXTargetDependency */,
+			);
+			name = GourmetAlertUITests;
+			productName = GourmetAlertUITests;
+			productReference = 5AFFBAF128A5A2370025C9A9 /* GourmetAlertUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		5AFFBAC928A5A2330025C9A9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1340;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					5AFFBAD028A5A2330025C9A9 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					5AFFBAE628A5A2370025C9A9 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 5AFFBAD028A5A2330025C9A9;
+					};
+					5AFFBAF028A5A2370025C9A9 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 5AFFBAD028A5A2330025C9A9;
+					};
+				};
+			};
+			buildConfigurationList = 5AFFBACC28A5A2330025C9A9 /* Build configuration list for PBXProject "GourmetAlert" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 5AFFBAC828A5A2330025C9A9;
+			productRefGroup = 5AFFBAD228A5A2330025C9A9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5AFFBAD028A5A2330025C9A9 /* GourmetAlert */,
+				5AFFBAE628A5A2370025C9A9 /* GourmetAlertTests */,
+				5AFFBAF028A5A2370025C9A9 /* GourmetAlertUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		5AFFBACF28A5A2330025C9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFFBAE128A5A2370025C9A9 /* LaunchScreen.storyboard in Resources */,
+				5AFFBADE28A5A2370025C9A9 /* Assets.xcassets in Resources */,
+				5AFFBADC28A5A2330025C9A9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAE528A5A2370025C9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAEF28A5A2370025C9A9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		5AFFBACD28A5A2330025C9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFFBAD928A5A2330025C9A9 /* ViewController.swift in Sources */,
+				5AFFBAD528A5A2330025C9A9 /* AppDelegate.swift in Sources */,
+				5AFFBAD728A5A2330025C9A9 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAE328A5A2370025C9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFFBAEC28A5A2370025C9A9 /* GourmetAlertTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		5AFFBAED28A5A2370025C9A9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5AFFBAF628A5A2370025C9A9 /* GourmetAlertUITests.swift in Sources */,
+				5AFFBAF828A5A2370025C9A9 /* GourmetAlertUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5AFFBAE928A5A2370025C9A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AFFBAD028A5A2330025C9A9 /* GourmetAlert */;
+			targetProxy = 5AFFBAE828A5A2370025C9A9 /* PBXContainerItemProxy */;
+		};
+		5AFFBAF328A5A2370025C9A9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 5AFFBAD028A5A2330025C9A9 /* GourmetAlert */;
+			targetProxy = 5AFFBAF228A5A2370025C9A9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5AFFBADA28A5A2330025C9A9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AFFBADB28A5A2330025C9A9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5AFFBADF28A5A2370025C9A9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5AFFBAE028A5A2370025C9A9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		5AFFBAF928A5A2370025C9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		5AFFBAFA28A5A2370025C9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5AFFBAFC28A5A2370025C9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GourmetAlert/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5AFFBAFD28A5A2370025C9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = GourmetAlert/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlert;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		5AFFBAFF28A5A2370025C9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GourmetAlert.app/GourmetAlert";
+			};
+			name = Debug;
+		};
+		5AFFBB0028A5A2370025C9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlertTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GourmetAlert.app/GourmetAlert";
+			};
+			name = Release;
+		};
+		5AFFBB0228A5A2370025C9A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GourmetAlert;
+			};
+			name = Debug;
+		};
+		5AFFBB0328A5A2370025C9A9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = im.hiro.GourmetAlertUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = GourmetAlert;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5AFFBACC28A5A2330025C9A9 /* Build configuration list for PBXProject "GourmetAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFFBAF928A5A2370025C9A9 /* Debug */,
+				5AFFBAFA28A5A2370025C9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AFFBAFB28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFFBAFC28A5A2370025C9A9 /* Debug */,
+				5AFFBAFD28A5A2370025C9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AFFBAFE28A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFFBAFF28A5A2370025C9A9 /* Debug */,
+				5AFFBB0028A5A2370025C9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		5AFFBB0128A5A2370025C9A9 /* Build configuration list for PBXNativeTarget "GourmetAlertUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5AFFBB0228A5A2370025C9A9 /* Debug */,
+				5AFFBB0328A5A2370025C9A9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 5AFFBAC928A5A2330025C9A9 /* Project object */;
+}
