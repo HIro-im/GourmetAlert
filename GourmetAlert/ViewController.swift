@@ -17,15 +17,17 @@ struct shopData {
     var shopURL = [String]()
 }
 
+
 class ViewController: UIViewController {
 
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
     var articles = shopData()
     var image = UIImage()
     
-    let baseURL = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=c73cb0c281eb859a"
+    let baseURL = "https://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=c73cb0c281eb859a"
     let countParameter = "&count=30"
     let format = "&format=json"
     
@@ -44,8 +46,22 @@ class ViewController: UIViewController {
                     
                     // ここでデータを配列にはめる
                     for i in 0..<responseData["results"]["shop"].count {
-                        
+                        guard let name = responseData["results"]["shop"][i]["name"].string else { return }
+                        self.articles.shopName.append(name)
+                        guard let address = responseData["results"]["shop"][i]["address"].string else { return }
+                        self.articles.shopAddress.append(address)
+                        guard let LogoImage = responseData["results"]["shop"][i]["logo_image"].string else { return }
+                        self.articles.shopLogoImage.append(LogoImage)
+                        guard let URL = responseData["results"]["shop"][i]["urls"]["pc"].string else { return }
+                        self.articles.shopURL.append(URL)
                     }
+                    
+                case .failure(let error):
+                    print("Error: \(String(describing: error))")
+                }
+                
+                if self.articles.shopName.count > 0 {
+                    self.tableView?.reloadData()
                 }
                 
             }
@@ -55,6 +71,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     func refreshData() {
@@ -70,11 +89,19 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return articles.shopName.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = articles.shopName[indexPath.row]
+        cell.detailTextLabel?.text = articles.shopAddress[indexPath.row]
+
+        if let imageURL = URL(string: self.articles.shopLogoImage[indexPath.row]) {
+            cell.imageView?.af.setImage(withURL: imageURL, placeholderImage: UIImage(named:  "no-image"))
+        }
+        
+        return cell
     }
     
     
@@ -86,7 +113,10 @@ extension ViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let changeSearchBar = searchBar.text?.replacingOccurrences(of: " ", with: ",") else { return }
         guard let changeSearchBar = searchBar.text?.replacingOccurrences(of: "　", with: ",") else { return }
-        guard let encodeKeyBoard = changeSearchBar.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
+        guard let encodeKeyword = changeSearchBar.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) else { return }
+        getArticleData(url: baseURL + "&keyword=" + encodeKeyword + countParameter + format)
+        self.tableView.reloadData()
         
+        searchBar.resignFirstResponder()
     }
 }
