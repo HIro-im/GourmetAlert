@@ -25,13 +25,30 @@ class ViewController: UIViewController {
     var articles = shopData()
     var image = UIImage()
     
-    let baseURL = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/"
+    let baseURL = "http://webservice.recruit.co.jp/hotpepper/gourmet/v1/?key=c73cb0c281eb859a"
     let countParameter = "&count=30"
     let format = "&format=json"
     
     func getArticleData(url: String) {
         
         refreshData()
+        
+        AF.request(url, method: .get)
+            .responseData { response in
+                switch (response.result) {
+                case .success(let data):
+                    print("Success! Got the data")
+                    
+                    let responseData: JSON = JSON(data)
+                    print(responseData)
+                    
+                    // ここでデータを配列にはめる
+                    for i in 0..<responseData["results"]["shop"].count {
+                        
+                    }
+                }
+                
+            }
         
         
     }
