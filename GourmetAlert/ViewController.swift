@@ -65,8 +65,6 @@ class ViewController: UIViewController {
                 }
                 
             }
-        
-        
     }
     
     override func viewDidLoad() {
@@ -81,7 +79,6 @@ class ViewController: UIViewController {
         self.articles.shopAddress.removeAll()
         self.articles.shopLogoImage.removeAll()
         self.articles.shopURL.removeAll()
-        
     }
 
 
@@ -104,7 +101,15 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "HotWeb") as? HotWebViewController {
+            vc.storedShopName = self.articles.shopName[indexPath.row]
+            vc.storedShopAddress = self.articles.shopAddress[indexPath.row]
+            vc.storedURL = self.articles.shopURL[indexPath.row]
+            
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }
 
 
