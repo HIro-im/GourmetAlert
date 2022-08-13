@@ -24,7 +24,8 @@ class FavoriteViewController: UIViewController {
     var currentId: Int = 0
     var currentLunchCount: Int = 0
     var currentDinnerCount: Int = 0
-    let saveLimit: Int = 0
+    let saveLimit: Int = 2
+    var limitOver: Bool = false
     
     let realm = try! Realm()
     
@@ -49,6 +50,11 @@ class FavoriteViewController: UIViewController {
     
     @IBAction func saveButtonTapped(_ sender: Any) {
         
+        limitOver = false
+
+        checkLimit()
+        if limitOver == true { return }
+    
         realmRegister()
         returnView()
         
@@ -56,6 +62,24 @@ class FavoriteViewController: UIViewController {
     
     func returnView() {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func checkLimit() {
+        switch notificationTiming.selectedSegmentIndex {
+        case SegmentSelected.isLunch.rawValue:
+            if currentLunchCount >= saveLimit {
+                print("昼が限界")
+                limitOver = true
+            }
+        case SegmentSelected.isDinner.rawValue:
+            if currentDinnerCount >= saveLimit {
+                print("夕が限界")
+                limitOver = true
+            }
+        default:
+            print("checkLimit Irregular")
+            limitOver = true
+        }
     }
     
     func realmRegister() {
