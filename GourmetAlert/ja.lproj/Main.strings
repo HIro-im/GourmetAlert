@@ -1,0 +1,36 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "3BG-qE-qxq"; */
+"3BG-qE-qxq.text" = "Label";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "8ds-wE-WaJ"; */
+"8ds-wE-WaJ.text" = "Title";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Cwl-0h-sYa"; */
+"Cwl-0h-sYa.text" = "Label";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "KQc-Cn-qgP"; */
+"KQc-Cn-qgP.title" = "Item";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "NCf-go-FpT"; */
+"NCf-go-FpT.text" = "Label";
+
+/* Class = "UILabel"; text = "Subtitle"; ObjectID = "Nf8-M7-R25"; */
+"Nf8-M7-R25.text" = "Subtitle";
+
+/* Class = "UIButton"; configuration.title = "取消"; ObjectID = "OQ7-rZ-4gW"; */
+"OQ7-rZ-4gW.configuration.title" = "取消";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "OQ7-rZ-4gW"; */
+"OQ7-rZ-4gW.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "保存"; ObjectID = "oa5-mr-o92"; */
+"oa5-mr-o92.configuration.title" = "保存";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oa5-mr-o92"; */
+"oa5-mr-o92.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; t7t-tF-oey.segmentTitles[0] = "昼ごはん"; ObjectID = "t7t-tF-oey"; */
+"t7t-tF-oey.segmentTitles[0]" = "昼ごはん";
+
+/* Class = "UISegmentedControl"; t7t-tF-oey.segmentTitles[1] = "夕ごはん"; ObjectID = "t7t-tF-oey"; */
+"t7t-tF-oey.segmentTitles[1]" = "夕ごはん";
