@@ -20,6 +20,7 @@
 		5AFFBB0A28A74C720025C9A9 /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBB0928A74C720025C9A9 /* FavoriteViewController.swift */; };
 		5AFFBB0E28A76BFB0025C9A9 /* FavoriteData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBB0D28A76BFB0025C9A9 /* FavoriteData.swift */; };
 		5AFFBB1028A76D220025C9A9 /* Parameter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBB0F28A76D220025C9A9 /* Parameter.swift */; };
+		5AFFBB1428AC3DD40025C9A9 /* FavoriteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5AFFBB1328AC3DD40025C9A9 /* FavoriteListViewController.swift */; };
 		9189F776C833827787A9ADB8 /* Pods_GourmetAlert_GourmetAlertUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1768CA28030507151D595857 /* Pods_GourmetAlert_GourmetAlertUITests.framework */; };
 		A2BAB68BA038DC7BC8C57046 /* Pods_GourmetAlert.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E4698D3551D7123F42E16AB /* Pods_GourmetAlert.framework */; };
 		DC049D597F33A3857E080A57 /* Pods_GourmetAlertTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABFACC2A8F38E3D9455B4D37 /* Pods_GourmetAlertTests.framework */; };
@@ -67,6 +68,7 @@
 		5AFFBB0F28A76D220025C9A9 /* Parameter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parameter.swift; sourceTree = "<group>"; };
 		5AFFBB1128A92BBE0025C9A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
 		5AFFBB1228A92BBF0025C9A9 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		5AFFBB1328AC3DD40025C9A9 /* FavoriteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteListViewController.swift; sourceTree = "<group>"; };
 		A94913FD7495C28F5A40B88F /* Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig"; path = "Target Support Files/Pods-GourmetAlert-GourmetAlertUITests/Pods-GourmetAlert-GourmetAlertUITests.release.xcconfig"; sourceTree = "<group>"; };
 		ABFACC2A8F38E3D9455B4D37 /* Pods_GourmetAlertTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GourmetAlertTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B49CFAF30B10EDF4C447D870 /* Pods-GourmetAlertTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GourmetAlertTests.debug.xcconfig"; path = "Target Support Files/Pods-GourmetAlertTests/Pods-GourmetAlertTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				5AFFBB0928A74C720025C9A9 /* FavoriteViewController.swift */,
 				5AFFBB0D28A76BFB0025C9A9 /* FavoriteData.swift */,
 				5AFFBB0F28A76D220025C9A9 /* Parameter.swift */,
+				5AFFBB1328AC3DD40025C9A9 /* FavoriteListViewController.swift */,
 				5AFFBADD28A5A2370025C9A9 /* Assets.xcassets */,
 				5AFFBADF28A5A2370025C9A9 /* LaunchScreen.storyboard */,
 				5AFFBAE228A5A2370025C9A9 /* Info.plist */,
@@ -425,6 +428,7 @@
 				5AFFBB0828A746A70025C9A9 /* HotWebViewController.swift in Sources */,
 				5AFFBAD528A5A2330025C9A9 /* AppDelegate.swift in Sources */,
 				5AFFBB0E28A76BFB0025C9A9 /* FavoriteData.swift in Sources */,
+				5AFFBB1428AC3DD40025C9A9 /* FavoriteListViewController.swift in Sources */,
 				5AFFBAD728A5A2330025C9A9 /* SceneDelegate.swift in Sources */,
 				5AFFBB1028A76D220025C9A9 /* Parameter.swift in Sources */,
 				5AFFBB0A28A74C720025C9A9 /* FavoriteViewController.swift in Sources */,
