@@ -26,6 +26,13 @@ class FavoriteViewController: UIViewController {
     var currentDinnerCount: Int = 0
     let saveLimit: Int = 2
     var limitOver: Bool = false
+
+    let idForLunch:String = "Lunch"
+    let idForDinner:String = "Dinner"
+    var notificationId:String = ""
+    
+    var searchKey: Int = 0
+    var latestIndex: Int = 0
     
     let realm = try! Realm()
     
@@ -56,6 +63,7 @@ class FavoriteViewController: UIViewController {
         if limitOver == true { return }
     
         realmRegister()
+        notificationRegister()
         returnView()
         
     }
@@ -122,5 +130,35 @@ class FavoriteViewController: UIViewController {
         currentDinnerCount = forDinner.count
         print(currentDinnerCount)
 
+    }
+    
+    func notificationRegister() {
+
+        let content = UNMutableNotificationContent()
+
+        switch notificationTiming.selectedSegmentIndex {
+        case SegmentSelected.isLunch.rawValue:
+            searchKey = Timing.lunch.rawValue
+            latestIndex = currentLunchCount - 1
+            notificationId = idForLunch
+            
+        case SegmentSelected.isDinner.rawValue:
+            searchKey = Timing.dinner.rawValue
+            latestIndex = currentDinnerCount - 1
+            notificationId = idForDinner
+            
+        default:
+            print("Irregular")
+            return
+        }
+        
+        let forNotificationRecord = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
+        let latestRecord = forNotificationRecord[latestIndex].shopName
+        
+        content.title = latestRecord
+        content.body = "気になっていたお店に行きませんか"
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+        UNUserNotificationCenter.current().add(request)
     }
 }

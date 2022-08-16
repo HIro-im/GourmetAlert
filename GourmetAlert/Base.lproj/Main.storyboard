@@ -223,7 +223,7 @@
                     <connections>
                         <outlet property="notificationTiming" destination="t7t-tF-oey" id="YqC-jX-wDH"/>
                         <outlet property="selectShopAddress" destination="NCf-go-FpT" id="UUC-Fv-agH"/>
-                        <outlet property="selectShopName" destination="NCf-go-FpT" id="VeU-TN-P62"/>
+                        <outlet property="selectShopName" destination="3BG-qE-qxq" id="bxd-LZ-MBf"/>
                         <outlet property="selectURL" destination="Cwl-0h-sYa" id="IeF-Rk-9nX"/>
                     </connections>
                 </viewController>
