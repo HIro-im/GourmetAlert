@@ -15,7 +15,13 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var selectShopAddress: UILabel!
     @IBOutlet weak var selectURL: UILabel!
     
+    @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var saveButton: UIButton!
+    
     @IBOutlet weak var notificationTiming: UISegmentedControl!
+    
+    var composeButtonItem: UIBarButtonItem!
+    var trashButtonItem: UIBarButtonItem!
     
     var receivedShopName: String?
     var receivedShopAddress: String?
@@ -34,19 +40,156 @@ class FavoriteViewController: UIViewController {
     var searchKey: Int = 0
     var latestIndex: Int = 0
     
+    var selectedId: Int = 0
+    
     let realm = try! Realm()
+    
+    
+    // 詳細画面を開いたときの状態を識別する
+    var openMode: Int = 0
+    // 保存・取消ボタンの処理を切り替えるための変数
+    var switchProcess: Int = 0
+    
+    var receivedId: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        fetchCurrentData()
         
-        selectShopName.text = receivedShopName
-        selectShopAddress.text = receivedShopAddress
-        selectURL.text = receivedShopURL
+        buttonConfig(openMode)
+        setData(openMode)
+        
+        
+        switch openMode {
+        case switchOpenMode.forCreate.rawValue:
+            fetchCurrentData()
+            
+        case switchOpenMode.forReference.rawValue:
+            addTapRecognizer()
+        default:
+            print("Irregular case")
+        }
+        
+        
 
     }
     
+    func addTapRecognizer() {
+        // URLが書いてあるラベルをタップすると処理が行われるようにしている
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapURL))
+        self.selectURL.addGestureRecognizer(tapGestureRecognizer)
+    }
+    
+    // URLリンクタップ時の処理
+    @objc func tapURL() {
+        // 確認用のptint(削除可能)
+        print("tapURL")
+        // タブバーコントロール内の一番左のビューに遷移するため、[0]のビューを示し、ナビゲーションコントローラとしてキャストする
+        if let nextVC = tabBarController?.viewControllers?[0] as? UINavigationController {
+            // そこの最初のスタック(スタック内の一番最後にある部分を示している?)が遷移したいビューコントローラクラスなら、値を入れる
+            if let topVC = nextVC.topViewController as? HotWebViewController {
+                topVC.storedURL = selectURL.text
+                tabBarController?.selectedViewController = nextVC
+            }
+        }
+    }
+    
+    func buttonConfig(_ currentMode: Int) {
+        
+        switch currentMode {
+        case switchOpenMode.forCreate.rawValue:
+            cancelButton.isHidden = false
+            saveButton.isHidden = false
+            
+        case switchOpenMode.forReference.rawValue:
+            cancelButton.isHidden = true
+            saveButton.isHidden = true
+            
+            composeButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeButtonTapped))
+            trashButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
+            self.navigationItem.rightBarButtonItems = [composeButtonItem, trashButtonItem]
+
+        default:
+            print("Received Error")
+        }
+        
+    }
+    
+    func setData(_ currentMode: Int) {
+        switch currentMode {
+        case switchOpenMode.forCreate.rawValue:
+            selectShopName.text = receivedShopName
+            selectShopAddress.text = receivedShopAddress
+            selectURL.text = receivedShopURL
+            notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
+            
+        case switchOpenMode.forReference.rawValue:
+            let selectedData = realm.objects(FavoriteData.self).filter("id == %@", receivedId)
+            
+            selectShopName.text = selectedData[0].shopName
+            selectShopAddress.text = selectedData[0].shopAddress
+            selectURL.text = selectedData[0].shopURL
+
+            if selectedData[0].notificationTiming ==  Timing.lunch.rawValue {
+                notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
+            } else {
+                notificationTiming.selectedSegmentIndex = SegmentSelected.isDinner.rawValue
+            }
+            
+            selectedId = selectedData[0].id
+
+        default:
+            print("Received Error")
+        }
+        
+    }
+    
+    // メモを修正するための処理
+    @objc func composeButtonTapped() {
+        
+        // 戻るボタン・編集ボタン・削除ボタンを非表示にする
+        // (統一感を出すために戻るボタンを非表示にする)
+        self.navigationItem.rightBarButtonItems = nil
+        self.navigationItem.hidesBackButton = true
+                
+        // 取消ボタン・保存ボタンの表示を行う
+        cancelButton.isHidden = false
+        saveButton.isHidden = false
+        
+    }
+    
+    // メモを削除するための処理
+    @objc func trashButtonTapped() {
+        let alert = UIAlertController(title: "ブックマークの削除", message: "このブックマークを削除してもよろしいですか？", preferredStyle: .alert)
+        
+        let cancel = UIAlertAction(title: "キャンセル", style: .default)
+        
+        let delete = UIAlertAction(title: "削除", style: .destructive, handler: {(action) -> Void in
+
+            // 削除したいデータを検索する
+            let deleteData = self.realm.objects(FavoriteData.self).filter("id == %@", self.selectedId)
+            
+            do {
+                try self.realm.write {
+                    self.realm.delete(deleteData)
+                }
+            } catch {
+                print("Error \(error)")
+            }
+            
+            // リストに遷移するための処理(pushだと階層が深くなってしまって、戻るボタンが表示されてしまうため、popを使う)
+            self.navigationController?.popViewController(animated: true)
+
+        })
+        
+        alert.addAction(cancel)
+        alert.addAction(delete)
+        
+        self.present(alert, animated: true, completion: nil)
+        
+    }
+
+
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         

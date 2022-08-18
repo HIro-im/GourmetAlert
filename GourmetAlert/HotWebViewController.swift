@@ -48,6 +48,8 @@ class HotWebViewController: UIViewController {
             nextView.receivedShopAddress = storedShopAddress
             nextView.receivedShopURL = storedURL
             
+            nextView.openMode = switchOpenMode.forCreate.rawValue
+            
             self.present(nextView, animated: true, completion: nil)
             print("tapped!")
         }

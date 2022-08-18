@@ -103,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeQ-Ix-361" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3012" y="86"/>
+            <point key="canvasLocation" x="2820" y="-700"/>
         </scene>
         <!--Favorite View Controller-->
         <scene sceneID="fyT-uj-OOK">
@@ -209,7 +209,7 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwl-0h-sYa">
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwl-0h-sYa">
                                 <rect key="frame" x="60" y="484" width="276" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -221,7 +221,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="OQ7-rZ-4gW" id="hAM-3m-Fdf"/>
                         <outlet property="notificationTiming" destination="t7t-tF-oey" id="YqC-jX-wDH"/>
+                        <outlet property="saveButton" destination="oa5-mr-o92" id="KLa-0q-QLU"/>
                         <outlet property="selectShopAddress" destination="NCf-go-FpT" id="UUC-Fv-agH"/>
                         <outlet property="selectShopName" destination="3BG-qE-qxq" id="bxd-LZ-MBf"/>
                         <outlet property="selectURL" destination="Cwl-0h-sYa" id="IeF-Rk-9nX"/>
@@ -229,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbT-UO-wqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3011.594202898551" y="825"/>
+            <point key="canvasLocation" x="2819" y="86"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="U5N-65-s8D">

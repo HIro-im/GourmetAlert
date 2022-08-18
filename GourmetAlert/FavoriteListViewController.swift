@@ -58,5 +58,21 @@ extension FavoriteListViewController: UITableViewDelegate,UITableViewDataSource 
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        // 遷移先のビューコントローラのインスタンスを用意する
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "favorite") as? FavoriteViewController {
+            
+            // リストからタップされたIDを渡す
+            vc.receivedId = filtData?[indexPath.row].id
+            
+            vc.openMode = switchOpenMode.forReference.rawValue
+            
+            // 遷移を実行させる(階層をつなげた遷移(=ナビゲーションバーのbackが使える)を実現したいのでpushする
+            navigationController?.pushViewController(vc, animated: true)
+        }
+    }
+
+    
     
 }

@@ -16,3 +16,8 @@ enum Timing :Int {
     case lunch = 1
     case dinner = 2
 }
+
+enum switchOpenMode: Int {
+    case forCreate = 1
+    case forReference = 2
+}
