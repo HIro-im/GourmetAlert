@@ -84,16 +84,14 @@ class FavoriteViewController: UIViewController {
     @objc func tapURL() {
         // 確認用のptint(削除可能)
         print("tapURL")
-        // タブバーコントロール内の一番左のビューに遷移するため、[0]のビューを示し、ナビゲーションコントローラとしてキャストする
-        if let nextVC = tabBarController?.viewControllers?[0] as? UINavigationController {
-            // そこの最初のスタック(スタック内の一番最後にある部分を示している?)が遷移したいビューコントローラクラスなら、値を入れる
-            if let topVC = nextVC.topViewController as? HotWebViewController {
-                topVC.storedURL = selectURL.text
-                tabBarController?.selectedViewController = nextVC
-            }
+        
+        if let vc = storyboard?.instantiateViewController(withIdentifier: "HotWeb") as? HotWebViewController {
+            vc.storedURL = selectURL.text
+            
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
-    
+            
     func buttonConfig(_ currentMode: Int) {
         
         switch currentMode {
