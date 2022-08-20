@@ -41,7 +41,8 @@ class FavoriteViewController: UIViewController {
     var latestIndex: Int = 0
     
     var selectedId: Int = 0
-    
+    var selectTab: Int = 0
+
     let realm = try! Realm()
     
     
@@ -98,10 +99,12 @@ class FavoriteViewController: UIViewController {
         case switchOpenMode.forCreate.rawValue:
             cancelButton.isHidden = false
             saveButton.isHidden = false
+            notificationTiming.isEnabled = true
             
         case switchOpenMode.forReference.rawValue:
             cancelButton.isHidden = true
             saveButton.isHidden = true
+            notificationTiming.isEnabled = false
             
             composeButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(composeButtonTapped))
             trashButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(trashButtonTapped))
@@ -130,8 +133,12 @@ class FavoriteViewController: UIViewController {
 
             if selectedData[0].notificationTiming ==  Timing.lunch.rawValue {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
+                searchKey = Timing.lunch.rawValue
+                notificationId = idForLunch
             } else {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isDinner.rawValue
+                searchKey = Timing.dinner.rawValue
+                notificationId = idForDinner
             }
             
             selectedId = selectedData[0].id
@@ -154,6 +161,8 @@ class FavoriteViewController: UIViewController {
         cancelButton.isHidden = false
         saveButton.isHidden = false
         
+        
+        
     }
     
     // メモを削除するための処理
@@ -175,6 +184,8 @@ class FavoriteViewController: UIViewController {
                 print("Error \(error)")
             }
             
+            self.notificationCheck()
+            
             // リストに遷移するための処理(pushだと階層が深くなってしまって、戻るボタンが表示されてしまうため、popを使う)
             self.navigationController?.popViewController(animated: true)
 
@@ -184,6 +195,25 @@ class FavoriteViewController: UIViewController {
         alert.addAction(delete)
         
         self.present(alert, animated: true, completion: nil)
+        
+    }
+    
+    func notificationCheck() {
+        let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
+        if filterData == nil || filterData.count == 0 {
+            print("alert delete")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId])
+        } else {
+            
+            // 共通化できそう
+            let content = UNMutableNotificationContent()
+            let latestRecord = filterData[filterData.count - 1].shopName
+            content.title = latestRecord
+            content.body = "気になっていたお店に行きませんか"
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            let updateRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(updateRequest)
+        }
         
     }
 
@@ -280,19 +310,23 @@ class FavoriteViewController: UIViewController {
         switch notificationTiming.selectedSegmentIndex {
         case SegmentSelected.isLunch.rawValue:
             searchKey = Timing.lunch.rawValue
+            // 不要かも
             latestIndex = currentLunchCount - 1
+            //
             notificationId = idForLunch
             
         case SegmentSelected.isDinner.rawValue:
             searchKey = Timing.dinner.rawValue
+            // 不要かも
             latestIndex = currentDinnerCount - 1
+            // 
             notificationId = idForDinner
             
         default:
             print("Irregular")
             return
         }
-        
+        // 共通化できそう
         let forNotificationRecord = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
         let latestRecord = forNotificationRecord[latestIndex].shopName
         

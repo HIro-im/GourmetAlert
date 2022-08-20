@@ -31,12 +31,12 @@ class HotWebViewController: UIViewController {
         super.viewDidLoad()
         
         let count = (self.navigationController?.viewControllers.count ?? 2) - 2
-            if (self.navigationController?.viewControllers[count] as? ViewController) == nil {
-                print(" from FavoriteViewController")
-                } else {
-                    bookmarkButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(addButtonTapped))
-                    self.navigationItem.rightBarButtonItem = bookmarkButtonItem
-            }
+        if (self.navigationController?.viewControllers[count] as? ViewController) == nil {
+            print(" from FavoriteViewController")
+            } else {
+            bookmarkButtonItem = UIBarButtonItem(barButtonSystemItem: .bookmarks, target: self, action: #selector(addButtonTapped))
+            self.navigationItem.rightBarButtonItem = bookmarkButtonItem
+        }
         
         guard let detailUrl = storedURL else { return }
         webViewLoad(detailUrl)

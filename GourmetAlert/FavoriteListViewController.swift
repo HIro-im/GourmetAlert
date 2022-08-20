@@ -21,7 +21,28 @@ class FavoriteListViewController: UIViewController {
         super.viewDidLoad()
         self.tableView.delegate = self
         self.tableView.dataSource = self
-
+        
+        setTiming()
+        
+        filtData = getData(selectedTiming)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        // 挙動観測のための一文
+        print("table viewWillAppear")
+        
+        // realm内のテーブルを取り出して、メンバ変数への格納と件数を取得する
+        setTiming()
+        filtData = getData(selectedTiming)
+        
+        // リストビューを再読込する
+        tableView.reloadData()
+        
+    }
+    
+    func setTiming() {
         switch navigationController?.tabBarItem.tag {
         case Timing.lunch.rawValue:
             selectedTiming = Timing.lunch.rawValue
@@ -30,8 +51,6 @@ class FavoriteListViewController: UIViewController {
         default:
             print("another")
         }
-        
-        filtData = getData(selectedTiming)
     }
     
     func getData(_ selectTab: Int) -> Results<FavoriteData> {
