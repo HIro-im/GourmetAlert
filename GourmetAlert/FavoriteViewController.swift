@@ -221,7 +221,20 @@ class FavoriteViewController: UIViewController {
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         
-        returnView()
+        switch openMode {
+        case switchOpenMode.forCreate.rawValue:
+            returnView()
+            
+        case switchOpenMode.forReference.rawValue:
+            cancelButton.isHidden = true
+            saveButton.isHidden = true
+            self.navigationItem.rightBarButtonItems = [composeButtonItem, trashButtonItem]
+            self.navigationItem.hidesBackButton = false
+            
+        default:
+            print("Irregular cancel")
+        }
+
     
     }
     
