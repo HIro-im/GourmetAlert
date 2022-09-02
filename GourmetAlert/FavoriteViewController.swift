@@ -30,7 +30,7 @@ class FavoriteViewController: UIViewController {
     var currentId: Int = 0
     var currentLunchCount: Int = 0
     var currentDinnerCount: Int = 0
-    let saveLimit: Int = 2
+    let saveLimit: Int = 3
     var limitOver: Bool = false
 
     let idForLunch:String = "Lunch"
@@ -42,6 +42,12 @@ class FavoriteViewController: UIViewController {
     
     var selectedId: Int = 0
     var selectTab: Int = 0
+    var editTiming: Int = 0
+    // 仮で作成するが、後でちゃんとリファクタリングすること
+    // 編集時のみ、変更前の通知と変更後の通知をいじらなければいけないので、
+    // そのために必要な変数を作る
+    var editNotificationTiming: Int = 0
+    var editNotificationId: String = ""
 
     let realm = try! Realm()
     
@@ -134,10 +140,14 @@ class FavoriteViewController: UIViewController {
             if selectedData[0].notificationTiming ==  Timing.lunch.rawValue {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
                 searchKey = Timing.lunch.rawValue
+                editNotificationTiming = Timing.dinner.rawValue
+                editNotificationId = idForDinner
                 notificationId = idForLunch
             } else {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isDinner.rawValue
                 searchKey = Timing.dinner.rawValue
+                editNotificationTiming = Timing.lunch.rawValue
+                editNotificationId = idForLunch
                 notificationId = idForDinner
             }
             
@@ -161,7 +171,7 @@ class FavoriteViewController: UIViewController {
         cancelButton.isHidden = false
         saveButton.isHidden = false
         
-        
+        notificationTiming.isEnabled = true
         
     }
     
@@ -198,26 +208,6 @@ class FavoriteViewController: UIViewController {
         
     }
     
-    func notificationCheck() {
-        let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
-        if filterData == nil || filterData.count == 0 {
-            print("alert delete")
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId])
-        } else {
-            
-            // 共通化できそう
-            let content = UNMutableNotificationContent()
-            let latestRecord = filterData[filterData.count - 1].shopName
-            content.title = latestRecord
-            content.body = "気になっていたお店に行きませんか"
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-            let updateRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(updateRequest)
-        }
-        
-    }
-
-
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
         
@@ -246,14 +236,37 @@ class FavoriteViewController: UIViewController {
         checkLimit()
         if limitOver == true { return }
     
-        realmRegister()
-        notificationRegister()
+        switch openMode {
+        case switchOpenMode.forCreate.rawValue:
+            realmRegister()
+            notificationRegister()
+
+        case switchOpenMode.forReference.rawValue:
+            realmUpdate()
+            notificationCheck()
+            notificationEditCheck()
+            
+        default:
+            print("Irregular save")
+        }
         returnView()
+
         
     }
     
     func returnView() {
-        self.dismiss(animated: true, completion: nil)
+
+        switch openMode {
+        case switchOpenMode.forCreate.rawValue:
+            self.dismiss(animated: true, completion: nil)
+            
+        case switchOpenMode.forReference.rawValue:
+            navigationController?.popViewController(animated: true)
+            
+        default:
+            print("Irregular return")
+            
+        }
     }
     
     func checkLimit() {
@@ -298,6 +311,29 @@ class FavoriteViewController: UIViewController {
         fetchCurrentData()
     }
     
+    func realmUpdate() {
+        let editData = self.realm.objects(FavoriteData.self).filter("id == %@", self.selectedId)
+        
+        switch notificationTiming.selectedSegmentIndex {
+        case SegmentSelected.isLunch.rawValue:
+            editTiming = Timing.lunch.rawValue
+        case SegmentSelected.isDinner.rawValue:
+            editTiming = Timing.dinner.rawValue
+        default:
+            print("Irregular")
+            return
+        }
+        
+        do {
+            try realm.write {
+                editData[0].notificationTiming = editTiming
+            }
+        } catch {
+            print("Error: \(error)")
+        }
+        
+    }
+    
     func fetchCurrentData() {
         let currentData = realm.objects(FavoriteData.self)
         if (currentData != nil && currentData.count != 0) {
@@ -316,6 +352,8 @@ class FavoriteViewController: UIViewController {
 
     }
     
+    
+    // この下の処理は特にリファクタリングをかけたい(重複が多すぎる)
     func notificationRegister() {
 
         let content = UNMutableNotificationContent()
@@ -344,9 +382,46 @@ class FavoriteViewController: UIViewController {
         let latestRecord = forNotificationRecord[latestIndex].shopName
         
         content.title = latestRecord
-        content.body = "気になっていたお店に行きませんか"
+        content.body = "気になっていたお店に行きませんか" + notificationId
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
+    
+    func notificationCheck() {
+        let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
+        if filterData == nil || filterData.count == 0 {
+            print("alert delete")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId])
+        } else {
+            // 共通化できそう
+            let content = UNMutableNotificationContent()
+            let latestRecord = filterData[filterData.count - 1].shopName
+            content.title = latestRecord
+            content.body = "気になっていたお店に行きませんか" + notificationId
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            let updateRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(updateRequest)
+        }
+        
+    }
+    
+    func notificationEditCheck() {
+        let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", editNotificationTiming)
+        if filterData == nil || filterData.count == 0 {
+            print("alert delete")
+            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [editNotificationId])
+        } else {
+            // 共通化できそう
+            let content = UNMutableNotificationContent()
+            let latestRecord = filterData[filterData.count - 1].shopName
+            content.title = latestRecord
+            content.body = "気になっていたお店に行きませんか" + editNotificationId
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+            let updateRequest = UNNotificationRequest(identifier: editNotificationId, content: content, trigger: trigger)
+            UNUserNotificationCenter.current().add(updateRequest)
+        }
+        
+    }
+
 }

@@ -13,11 +13,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound]) { (granted, _) in
-            if granted {
-                UNUserNotificationCenter.current().delegate = self
-            }
-        }
         // Override point for customization after application launch.
         return true
     }
@@ -39,14 +34,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
-extension AppDelegate: UNUserNotificationCenterDelegate {
-    func userNotificationCenter(_ center: UNUserNotificationCenter,
-                                willPresent notification: UNNotification,
-                                withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        if #available(iOS 14.0, *) {
-            completionHandler([[.banner, .list, .sound]])
-        } else {
-            completionHandler([[.alert, .sound]])
-        }
-    }
-}
