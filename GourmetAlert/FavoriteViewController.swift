@@ -72,6 +72,7 @@ class FavoriteViewController: UIViewController {
             fetchCurrentData()
             
         case switchOpenMode.forReference.rawValue:
+            fetchCurrentData()
             addTapRecognizer()
         default:
             print("Irregular case")
@@ -331,6 +332,8 @@ class FavoriteViewController: UIViewController {
         } catch {
             print("Error: \(error)")
         }
+        
+        fetchCurrentData()
         
     }
     

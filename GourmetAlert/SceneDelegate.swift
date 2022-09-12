@@ -76,4 +76,32 @@ extension SceneDelegate: UNUserNotificationCenterDelegate {
             completionHandler([[.alert, .sound]])
         }
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter,
+                                didReceive response: UNNotificationResponse,
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        var isTappedIdentifier:Int = 0
+        switch response.notification.request.identifier {
+        case "Lunch":
+            isTappedIdentifier = Timing.lunch.rawValue
+        case "Dinner":
+            isTappedIdentifier = Timing.dinner.rawValue
+        default:
+            print("Tapped Irregular")
+            
+        }
+        
+        print(response.notification.request.identifier)
+        
+        if let vc = window?.rootViewController as? UITabBarController {
+            if let nextVC = vc.viewControllers?[isTappedIdentifier] as? UINavigationController {
+                if let topVC = nextVC.topViewController as? FavoriteListViewController {
+                    topVC.navigationController?.tabBarItem.tag = isTappedIdentifier
+                    vc.selectedViewController = nextVC
+                }
+            }
+        }
+    }
+
 }
