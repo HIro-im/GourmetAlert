@@ -37,6 +37,10 @@ class FavoriteViewController: UIViewController {
     let idForDinner:String = "Dinner"
     var notificationId:String = ""
     
+    let titleForAlert = "登録件数オーバー"
+    let messageForCreate = "登録先のお店を1件削除してください"
+    let messageForReference = "変更先のお店を1件削除してください"
+    
     var searchKey: Int = 0
     var latestIndex: Int = 0
     
@@ -235,7 +239,21 @@ class FavoriteViewController: UIViewController {
         limitOver = false
 
         checkLimit()
-        if limitOver == true { return }
+        if limitOver == true {
+            
+            switch openMode {
+            case switchOpenMode.forCreate.rawValue:
+                limitOverMessagePresent(messageFor: messageForCreate)
+                
+            case switchOpenMode.forReference.rawValue:
+                limitOverMessagePresent(messageFor: messageForReference)
+                
+            default:
+                print("Irregular Alert")
+            }
+            
+            return
+        }
     
         switch openMode {
         case switchOpenMode.forCreate.rawValue:
@@ -425,6 +443,16 @@ class FavoriteViewController: UIViewController {
             UNUserNotificationCenter.current().add(updateRequest)
         }
         
+    }
+    
+    func limitOverMessagePresent(messageFor messageContent: String) {
+        let alert = UIAlertController(title: titleForAlert, message: messageContent, preferredStyle: .alert)
+        
+        let OK = UIAlertAction(title: "OK", style: .default)
+        
+        alert.addAction(OK)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
