@@ -72,6 +72,9 @@ class ViewController: UIViewController {
         searchBar.delegate = self
         tableView.delegate = self
         tableView.dataSource = self
+        
+        tableView.register(UINib(nibName: "MainTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")
+        
     }
     
     func refreshData() {
@@ -90,12 +93,13 @@ extension ViewController: UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = articles.shopName[indexPath.row]
-        cell.detailTextLabel?.text = articles.shopAddress[indexPath.row]
+                
+        let cell = tableView.dequeueReusableCell(withIdentifier: "customCell", for: indexPath) as! MainTableViewCell
+        cell.shopNameLabel?.text = articles.shopName[indexPath.row]
+        cell.shopAddressLabel?.text = articles.shopAddress[indexPath.row]
 
         if let imageURL = URL(string: self.articles.shopLogoImage[indexPath.row]) {
-            cell.imageView?.af.setImage(withURL: imageURL, placeholderImage: UIImage(named:  "no-image"))
+            cell.img!.af.setImage(withURL: imageURL)
         }
         
         return cell

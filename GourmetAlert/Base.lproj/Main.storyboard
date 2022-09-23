@@ -100,6 +100,7 @@
                             <constraint firstItem="2s6-jK-KPQ" firstAttribute="trailing" secondItem="oAz-mT-FId" secondAttribute="trailing" id="vSr-it-2yp"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eeQ-Ix-361" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -113,9 +114,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-KI-c22">
-                                <rect key="frame" x="60" y="107" width="42" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NgR-KI-c22">
+                                <rect key="frame" x="45" y="99" width="35" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="店名">
                                         <attributes>
@@ -127,16 +127,21 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BG-qE-qxq">
-                                <rect key="frame" x="60" y="172" width="276" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3BG-qE-qxq">
+                                <rect key="frame" x="45" y="169.5" width="324" height="19.5"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbW-Ms-N07">
-                                <rect key="frame" x="60" y="259" width="42" height="33"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbW-Ms-N07">
+                                <rect key="frame" x="45" y="239" width="35" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="住所">
                                         <attributes>
@@ -148,16 +153,21 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-go-FpT">
-                                <rect key="frame" x="60" y="331" width="276" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NCf-go-FpT">
+                                <rect key="frame" x="45" y="309.5" width="324" height="19.5"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePF-vq-Qhq">
-                                <rect key="frame" x="60" y="553" width="176" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ePF-vq-Qhq">
+                                <rect key="frame" x="45" y="519.5" width="156" height="20.5"/>
                                 <attributedString key="attributedText">
                                     <fragment content="行きたいタイミング">
                                         <attributes>
@@ -169,35 +179,42 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t7t-tF-oey">
-                                <rect key="frame" x="142" y="625" width="131" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="t7t-tF-oey">
+                                <rect key="frame" x="100" y="595" width="214" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="iNq-yh-KAJ"/>
+                                </constraints>
                                 <segments>
                                     <segment title="昼ごはん"/>
                                     <segment title="夕ごはん"/>
                                 </segments>
                             </segmentedControl>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQ7-rZ-4gW">
-                                <rect key="frame" x="80" y="703" width="64" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OQ7-rZ-4gW">
+                                <rect key="frame" x="80" y="690" width="70" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="94k-2h-Kfh"/>
+                                    <constraint firstAttribute="width" constant="70" id="aLu-EH-etf"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="取消"/>
                                 <connections>
                                     <action selector="cancelButtonTapped:" destination="uQs-Fz-hPO" eventType="touchUpInside" id="fqa-Nc-33H"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-mr-o92">
-                                <rect key="frame" x="263" y="703" width="64" height="43"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oa5-mr-o92">
+                                <rect key="frame" x="264" y="690" width="70" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="3BG-dz-A9R"/>
+                                    <constraint firstAttribute="width" constant="70" id="uXi-x6-Deb"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="保存"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="uQs-Fz-hPO" eventType="touchUpInside" id="EJ6-xQ-amn"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3v-PA-fPq">
-                                <rect key="frame" x="60" y="420" width="32" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3v-PA-fPq">
+                                <rect key="frame" x="45" y="379" width="32" height="21"/>
                                 <attributedString key="attributedText">
                                     <fragment content="URL">
                                         <attributes>
@@ -209,16 +226,48 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwl-0h-sYa">
-                                <rect key="frame" x="60" y="484" width="276" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cwl-0h-sYa">
+                                <rect key="frame" x="45" y="450" width="324" height="19.5"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="clipsToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="AJa-0j-Yeq"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="OQ7-rZ-4gW" firstAttribute="top" secondItem="t7t-tF-oey" secondAttribute="bottom" constant="55" id="0Me-J9-lU6"/>
+                            <constraint firstItem="NCf-go-FpT" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="0jn-AS-nlv"/>
+                            <constraint firstItem="AJa-0j-Yeq" firstAttribute="trailing" secondItem="t7t-tF-oey" secondAttribute="trailing" constant="100" id="10U-lo-4wR"/>
+                            <constraint firstItem="j3v-PA-fPq" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="2Vi-EG-1jT"/>
+                            <constraint firstItem="oa5-mr-o92" firstAttribute="top" secondItem="t7t-tF-oey" secondAttribute="bottom" constant="55" id="CTo-mi-gd2"/>
+                            <constraint firstItem="Cwl-0h-sYa" firstAttribute="top" secondItem="j3v-PA-fPq" secondAttribute="bottom" constant="50" id="DQi-B6-BFo"/>
+                            <constraint firstItem="ePF-vq-Qhq" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="Evv-55-hNh"/>
+                            <constraint firstItem="3BG-qE-qxq" firstAttribute="top" secondItem="NgR-KI-c22" secondAttribute="bottom" constant="50" id="LJf-2k-YZi"/>
+                            <constraint firstItem="NCf-go-FpT" firstAttribute="top" secondItem="zbW-Ms-N07" secondAttribute="bottom" constant="50" id="MDj-PO-cmv"/>
+                            <constraint firstItem="zbW-Ms-N07" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="NAc-Sg-5Sh"/>
+                            <constraint firstItem="ePF-vq-Qhq" firstAttribute="top" secondItem="Cwl-0h-sYa" secondAttribute="bottom" constant="50" id="PYO-LK-Tyx"/>
+                            <constraint firstItem="t7t-tF-oey" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="100" id="Q35-wp-by8"/>
+                            <constraint firstItem="Cwl-0h-sYa" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="SxQ-TC-a5Z"/>
+                            <constraint firstItem="NgR-KI-c22" firstAttribute="top" secondItem="AJa-0j-Yeq" secondAttribute="top" constant="55" id="ZcF-wM-8Qw"/>
+                            <constraint firstItem="AJa-0j-Yeq" firstAttribute="trailing" secondItem="3BG-qE-qxq" secondAttribute="trailing" constant="45" id="bHh-sP-Ixg"/>
+                            <constraint firstItem="OQ7-rZ-4gW" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="80" id="gYe-Rk-17d"/>
+                            <constraint firstItem="AJa-0j-Yeq" firstAttribute="trailing" secondItem="Cwl-0h-sYa" secondAttribute="trailing" constant="45" id="iZb-Rk-3qS"/>
+                            <constraint firstItem="AJa-0j-Yeq" firstAttribute="trailing" secondItem="oa5-mr-o92" secondAttribute="trailing" constant="80" id="j0m-73-HZy"/>
+                            <constraint firstItem="j3v-PA-fPq" firstAttribute="top" secondItem="NCf-go-FpT" secondAttribute="bottom" constant="50" id="lb1-UH-VHj"/>
+                            <constraint firstItem="AJa-0j-Yeq" firstAttribute="trailing" secondItem="NCf-go-FpT" secondAttribute="trailing" constant="45" id="tMD-Fq-e22"/>
+                            <constraint firstItem="t7t-tF-oey" firstAttribute="top" secondItem="ePF-vq-Qhq" secondAttribute="bottom" constant="55" id="tcc-Hw-Su2"/>
+                            <constraint firstItem="3BG-qE-qxq" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="wQb-eQ-oFw"/>
+                            <constraint firstItem="NgR-KI-c22" firstAttribute="leading" secondItem="AJa-0j-Yeq" secondAttribute="leading" constant="45" id="yeZ-Fx-vI5"/>
+                            <constraint firstItem="zbW-Ms-N07" firstAttribute="top" secondItem="3BG-qE-qxq" secondAttribute="bottom" constant="50" id="zLX-Nk-am2"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="cancelButton" destination="OQ7-rZ-4gW" id="hAM-3m-Fdf"/>
@@ -231,7 +280,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nbT-UO-wqv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2819" y="86"/>
+            <point key="canvasLocation" x="2818.840579710145" y="85.714285714285708"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="U5N-65-s8D">
@@ -347,6 +396,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
