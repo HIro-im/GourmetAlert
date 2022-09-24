@@ -255,7 +255,17 @@ class FavoriteViewController: UIViewController {
         switch openMode {
         case switchOpenMode.forCreate.rawValue:
             realmRegister()
-            notificationRegister()
+            switch notificationTiming.selectedSegmentIndex {
+            case SegmentSelected.isLunch.rawValue:
+                setParamForNotification(ofSetMode: setParamMode.forNotEdit.rawValue, Timing.lunch.rawValue)
+                
+            case SegmentSelected.isDinner.rawValue:
+                setParamForNotification(ofSetMode: setParamMode.forNotEdit.rawValue, Timing.dinner.rawValue)
+                
+            default:
+                print("saveButton For SaveMode error")
+            }
+            notificationRegister(searchKey,notificationId)
 
         case switchOpenMode.forReference.rawValue:
             realmUpdate()
@@ -372,21 +382,8 @@ class FavoriteViewController: UIViewController {
     
     
     // この下の処理は特にリファクタリングをかけたい(重複が多すぎる)
-    func notificationRegister() {
+    func notificationRegister(_ searchKey: Int, _ notificationId: String) {
 
-        switch notificationTiming.selectedSegmentIndex {
-        case SegmentSelected.isLunch.rawValue:
-            searchKey = Timing.lunch.rawValue
-            notificationId = idForLunch
-            
-        case SegmentSelected.isDinner.rawValue:
-            searchKey = Timing.dinner.rawValue
-            notificationId = idForDinner
-            
-        default:
-            print("Irregular")
-            return
-        }
         // 共通化できそう
         
         let content = UNMutableNotificationContent()
@@ -459,7 +456,7 @@ class FavoriteViewController: UIViewController {
             
         case  Timing.dinner.rawValue:
             searchKey = Timing.dinner.rawValue
-            notificationId = idForLunch
+            notificationId = idForDinner
             
         default:
             print("setParamForNotification First error")
