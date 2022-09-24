@@ -147,19 +147,12 @@ class FavoriteViewController: UIViewController {
             if selectedData[0].notificationTiming ==  Timing.lunch.rawValue {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
                 
-                searchKey = Timing.lunch.rawValue
-                editNotificationTiming = Timing.dinner.rawValue
-                editNotificationId = idForDinner
-                notificationId = idForLunch
             } else {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isDinner.rawValue
                 
-                searchKey = Timing.dinner.rawValue
-                editNotificationTiming = Timing.lunch.rawValue
-                editNotificationId = idForLunch
-                notificationId = idForDinner
             }
             
+            setParamForNotification(ofSetMode: setParamMode.forEdit.rawValue, selectedData[0].notificationTiming)
             selectedId = selectedData[0].id
 
         default:
@@ -384,16 +377,10 @@ class FavoriteViewController: UIViewController {
         switch notificationTiming.selectedSegmentIndex {
         case SegmentSelected.isLunch.rawValue:
             searchKey = Timing.lunch.rawValue
-            // 不要かも
-            latestIndex = currentLunchCount - 1
-            //
             notificationId = idForLunch
             
         case SegmentSelected.isDinner.rawValue:
             searchKey = Timing.dinner.rawValue
-            // 不要かも
-            latestIndex = currentDinnerCount - 1
-            // 
             notificationId = idForDinner
             
         default:
@@ -405,7 +392,7 @@ class FavoriteViewController: UIViewController {
         let content = UNMutableNotificationContent()
 
         let forNotificationRecord = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
-        let latestRecord = forNotificationRecord[latestIndex].shopName
+        let latestRecord = forNotificationRecord[forNotificationRecord.count - 1].shopName
         
         content.title = latestRecord
         
@@ -455,6 +442,7 @@ class FavoriteViewController: UIViewController {
             
             notificationBodyMessage(editNotificationId)
             
+            content.body = subtitle
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
             let updateRequest = UNNotificationRequest(identifier: editNotificationId, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(updateRequest)
@@ -462,7 +450,7 @@ class FavoriteViewController: UIViewController {
         
     }
     
-    func setParameterForNotification(ofSetMode setMode: Int, _ notificationTiming: Int) {
+    func setParamForNotification(ofSetMode setMode: Int, _ notificationTiming: Int) {
         
         switch notificationTiming {
         case Timing.lunch.rawValue:
@@ -478,7 +466,7 @@ class FavoriteViewController: UIViewController {
         }
         
         // 更新処理以外は以降の処理を実施しないようreturnで抜けさせる
-        if setMode == setParamMode.changeOnce.rawValue {
+        if setMode == setParamMode.forNotEdit.rawValue {
             return
         }
 

@@ -23,6 +23,6 @@ enum switchOpenMode: Int {
 }
 
 enum setParamMode: Int {
-    case changeOnce = 1
-    case changeTwice = 2
+    case forNotEdit = 1
+    case forEdit = 2
 }
