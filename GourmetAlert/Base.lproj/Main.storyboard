@@ -357,11 +357,11 @@
             </objects>
             <point key="canvasLocation" x="1803" y="86"/>
         </scene>
-        <!--Item-->
+        <!--検索-->
         <scene sceneID="88b-o2-k3A">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pqy-PC-NID" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="KQc-Cn-qgP"/>
+                    <tabBarItem key="tabBarItem" title="検索" image="magnifyingglass.circle" catalog="system" id="KQc-Cn-qgP"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mYT-gi-CfC">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -396,6 +396,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

@@ -26,10 +26,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let tabBarController = window?.rootViewController as? UITabBarController {
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "TableNav")
-            vc.tabBarItem = UITabBarItem(tabBarSystemItem: .topRated, tag: 1)
+            vc.tabBarItem = UITabBarItem(title: "昼ごはん", image: UIImage(named: "tabIconLunch"), tag: 1)
             tabBarController.viewControllers?.append(vc)
             let vc2 = storyboard.instantiateViewController(withIdentifier: "TableNav")
-            vc2.tabBarItem = UITabBarItem(tabBarSystemItem: .bookmarks, tag: 2)
+            vc2.tabBarItem = UITabBarItem(title: "夕ごはん", image: UIImage(named: "tabIconDinner"), tag: 2)
             tabBarController.viewControllers?.append(vc2)
         }
         guard let _ = (scene as? UIWindowScene) else { return }

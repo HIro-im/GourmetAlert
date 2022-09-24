@@ -21,3 +21,8 @@ enum switchOpenMode: Int {
     case forCreate = 1
     case forReference = 2
 }
+
+enum setParamMode: Int {
+    case changeOnce = 1
+    case changeTwice = 2
+}

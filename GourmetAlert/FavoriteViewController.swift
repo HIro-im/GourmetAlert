@@ -52,6 +52,7 @@ class FavoriteViewController: UIViewController {
     // そのために必要な変数を作る
     var editNotificationTiming: Int = 0
     var editNotificationId: String = ""
+    var subtitle: String = ""
 
     let realm = try! Realm()
     
@@ -133,6 +134,7 @@ class FavoriteViewController: UIViewController {
             selectShopName.text = receivedShopName
             selectShopAddress.text = receivedShopAddress
             selectURL.text = receivedShopURL
+            // 初期値(選択のデフォルト)
             notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
             
         case switchOpenMode.forReference.rawValue:
@@ -144,12 +146,14 @@ class FavoriteViewController: UIViewController {
 
             if selectedData[0].notificationTiming ==  Timing.lunch.rawValue {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isLunch.rawValue
+                
                 searchKey = Timing.lunch.rawValue
                 editNotificationTiming = Timing.dinner.rawValue
                 editNotificationId = idForDinner
                 notificationId = idForLunch
             } else {
                 notificationTiming.selectedSegmentIndex = SegmentSelected.isDinner.rawValue
+                
                 searchKey = Timing.dinner.rawValue
                 editNotificationTiming = Timing.lunch.rawValue
                 editNotificationId = idForLunch
@@ -377,8 +381,6 @@ class FavoriteViewController: UIViewController {
     // この下の処理は特にリファクタリングをかけたい(重複が多すぎる)
     func notificationRegister() {
 
-        let content = UNMutableNotificationContent()
-
         switch notificationTiming.selectedSegmentIndex {
         case SegmentSelected.isLunch.rawValue:
             searchKey = Timing.lunch.rawValue
@@ -399,11 +401,19 @@ class FavoriteViewController: UIViewController {
             return
         }
         // 共通化できそう
+        
+        let content = UNMutableNotificationContent()
+
         let forNotificationRecord = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
         let latestRecord = forNotificationRecord[latestIndex].shopName
         
         content.title = latestRecord
-        content.body = "気になっていたお店に行きませんか" + notificationId
+        
+        // content.bodyの設定
+        notificationBodyMessage(notificationId)
+        
+        content.body = subtitle
+        
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
         let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
@@ -417,9 +427,14 @@ class FavoriteViewController: UIViewController {
         } else {
             // 共通化できそう
             let content = UNMutableNotificationContent()
+            
             let latestRecord = filterData[filterData.count - 1].shopName
             content.title = latestRecord
-            content.body = "気になっていたお店に行きませんか" + notificationId
+            
+            // content.bodyの設定
+            notificationBodyMessage(notificationId)
+            
+            content.body = subtitle
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
             let updateRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(updateRequest)
@@ -437,10 +452,63 @@ class FavoriteViewController: UIViewController {
             let content = UNMutableNotificationContent()
             let latestRecord = filterData[filterData.count - 1].shopName
             content.title = latestRecord
-            content.body = "気になっていたお店に行きませんか" + editNotificationId
+            
+            notificationBodyMessage(editNotificationId)
+            
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
             let updateRequest = UNNotificationRequest(identifier: editNotificationId, content: content, trigger: trigger)
             UNUserNotificationCenter.current().add(updateRequest)
+        }
+        
+    }
+    
+    func setParameterForNotification(ofSetMode setMode: Int, _ notificationTiming: Int) {
+        
+        switch notificationTiming {
+        case Timing.lunch.rawValue:
+            searchKey = Timing.lunch.rawValue
+            notificationId = idForLunch
+            
+        case  Timing.dinner.rawValue:
+            searchKey = Timing.dinner.rawValue
+            notificationId = idForLunch
+            
+        default:
+            print("setParamForNotification First error")
+        }
+        
+        // 更新処理以外は以降の処理を実施しないようreturnで抜けさせる
+        if setMode == setParamMode.changeOnce.rawValue {
+            return
+        }
+
+        //　更新処理時の通知登録処理用にパラメータをセットする
+        switch notificationTiming {
+        case Timing.lunch.rawValue:
+            editNotificationTiming = Timing.dinner.rawValue
+            editNotificationId = idForDinner
+            
+        case  Timing.dinner.rawValue:
+            editNotificationTiming = Timing.lunch.rawValue
+            editNotificationId = idForLunch
+            
+        default:
+            print("setParamForNotification Second error")
+        }
+        
+    }
+    
+    // content.bodyの設定
+    func notificationBodyMessage(_ notificationId: String) {
+        switch notificationId {
+        case idForLunch:
+            subtitle = "お昼ごはんで気になっているお店があります"
+            
+        case idForDinner:
+            subtitle = "夕ご飯で気になっているお店があります"
+            
+        default:
+            print("Subtitle is Irregular")
         }
         
     }
