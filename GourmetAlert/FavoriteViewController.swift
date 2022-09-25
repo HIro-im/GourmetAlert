@@ -269,8 +269,8 @@ class FavoriteViewController: UIViewController {
 
         case switchOpenMode.forReference.rawValue:
             realmUpdate()
-//            notificationCheck()
-            notificationEditCheck()
+            notificationDecrement(searchKey, notificationId)
+            notificationRegister(editNotificationTiming, editNotificationId)
             
         default:
             print("Irregular save")
@@ -414,28 +414,7 @@ class FavoriteViewController: UIViewController {
         }
         
     }
-    
-    func notificationEditCheck() {
-        let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", editNotificationTiming)
-        if filterData == nil || filterData.count == 0 {
-            print("alert delete")
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [editNotificationId])
-        } else {
-            // 共通化できそう
-            let content = UNMutableNotificationContent()
-            let latestRecord = filterData[filterData.count - 1].shopName
-            content.title = latestRecord
-            
-            notificationBodyMessage(editNotificationId)
-            
-            content.body = subtitle
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-            let updateRequest = UNNotificationRequest(identifier: editNotificationId, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(updateRequest)
-        }
         
-    }
-    
     func setParamForNotification(ofSetMode setMode: Int, _ notificationTiming: Int) {
         
         switch notificationTiming {
