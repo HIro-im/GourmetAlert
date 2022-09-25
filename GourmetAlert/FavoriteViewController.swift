@@ -196,7 +196,7 @@ class FavoriteViewController: UIViewController {
                 print("Error \(error)")
             }
             
-            self.notificationCheck()
+            self.notificationDecrement(self.searchKey, self.notificationId)
             
             // リストに遷移するための処理(pushだと階層が深くなってしまって、戻るボタンが表示されてしまうため、popを使う)
             self.navigationController?.popViewController(animated: true)
@@ -269,7 +269,7 @@ class FavoriteViewController: UIViewController {
 
         case switchOpenMode.forReference.rawValue:
             realmUpdate()
-            notificationCheck()
+//            notificationCheck()
             notificationEditCheck()
             
         default:
@@ -403,25 +403,14 @@ class FavoriteViewController: UIViewController {
         UNUserNotificationCenter.current().add(request)
     }
     
-    func notificationCheck() {
+    func notificationDecrement(_ searchKey: Int, _ notificationId: String) {
         let filterData = realm.objects(FavoriteData.self).filter("notificationTiming == %@", searchKey)
         if filterData == nil || filterData.count == 0 {
             print("alert delete")
             UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [notificationId])
         } else {
             // 共通化できそう
-            let content = UNMutableNotificationContent()
-            
-            let latestRecord = filterData[filterData.count - 1].shopName
-            content.title = latestRecord
-            
-            // content.bodyの設定
-            notificationBodyMessage(notificationId)
-            
-            content.body = subtitle
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
-            let updateRequest = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
-            UNUserNotificationCenter.current().add(updateRequest)
+            notificationRegister(searchKey, notificationId)
         }
         
     }
