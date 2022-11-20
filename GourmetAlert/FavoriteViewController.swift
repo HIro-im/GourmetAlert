@@ -30,7 +30,7 @@ class FavoriteViewController: UIViewController {
     var currentId: Int = 0
     var currentLunchCount: Int = 0
     var currentDinnerCount: Int = 0
-    let saveLimit: Int = 3
+    let saveLimit: Int = 10
     var limitOver: Bool = false
 
     let idForLunch:String = "Lunch"
@@ -53,6 +53,8 @@ class FavoriteViewController: UIViewController {
     var editNotificationTiming: Int = 0
     var editNotificationId: String = ""
     var subtitle: String = ""
+    
+    var notificationTimer: DateComponents?
 
     let realm = try! Realm()
     
@@ -398,7 +400,11 @@ class FavoriteViewController: UIViewController {
         
         content.body = subtitle
         
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 60, repeats: true)
+        notificationSetTimer(notificationId)
+        
+        guard let date = notificationTimer else { return }
+        
+        let trigger = UNCalendarNotificationTrigger.init(dateMatching: date, repeats: true)
         let request = UNNotificationRequest(identifier: notificationId, content: content, trigger: trigger)
         UNUserNotificationCenter.current().add(request)
     }
@@ -464,6 +470,19 @@ class FavoriteViewController: UIViewController {
             print("Subtitle is Irregular")
         }
         
+    }
+    
+    func notificationSetTimer(_ notificationId: String) {
+        switch notificationId {
+        case idForLunch:
+            notificationTimer = DateComponents(hour:12, minute:00)
+            
+        case idForDinner:
+            notificationTimer = DateComponents(hour:18, minute:00)
+        
+        default:
+            print("setDateComponents error")
+        }
     }
     
     func limitOverMessagePresent(messageFor messageContent: String) {
